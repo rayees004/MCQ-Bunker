@@ -10,6 +10,8 @@ const api = axios.create({
   },
 });
 
+
+
 // Request interceptor to add the access token to the headers
 api.interceptors.request.use(
   (config) => {

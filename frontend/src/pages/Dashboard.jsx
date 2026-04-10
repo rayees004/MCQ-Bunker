@@ -375,9 +375,7 @@ const Dashboard = () => {
     setLoadingChapters(true);
     setChapters([]);
     try {
-      const res = await api.get('/api/student/chapters/', {
-        params: { subject: subject.id },
-      });
+      const res = await api.get(`/api/student/chapters/${subject.id}/`);
       const data = res.data.results || res.data;
       setChapters(
         (Array.isArray(data) ? data : []).map(c => ({
