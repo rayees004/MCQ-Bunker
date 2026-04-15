@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Mail, Lock, ArrowRight, BookOpen, Eye, EyeOff } from 'lucide-react';
+import { Mail, Lock, ArrowRight, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate, Navigate } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { motion } from 'framer-motion';
+import avodhaLogo from '../assets/avodha-logo.jpg';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -107,20 +108,31 @@ const Login = () => {
           {/* Logo */}
           <div style={{ position: 'relative', zIndex: 1 }}>
             <div style={{
-              display: 'flex', alignItems: 'center', gap: 12, marginBottom: 40,
+              display: 'flex', alignItems: 'center', gap: 14, marginBottom: 40,
             }}>
+              {/* Avodha logo badge */}
               <div style={{
-                width: 48, height: 48, borderRadius: 14,
-                background: 'rgba(255,255,255,0.2)',
-                backdropFilter: 'blur(8px)',
+                width: 64, height: 64, borderRadius: 16,
+                background: '#fff',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                border: '1px solid rgba(255,255,255,0.35)',
+                padding: 6,
+                boxShadow: '0 4px 20px rgba(0,0,0,0.25)',
+                flexShrink: 0,
               }}>
-                <BookOpen size={24} color="#fff" />
+                <img
+                  src={avodhaLogo}
+                  alt="Avodha"
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                />
               </div>
-              <span style={{ fontSize: '1.4rem', fontWeight: 900, color: '#fff', letterSpacing: '-0.03em' }}>
-                MCQ Bunker
-              </span>
+              <div>
+                <span style={{ fontSize: '1.35rem', fontWeight: 900, color: '#fff', letterSpacing: '-0.03em', display: 'block', lineHeight: 1.1 }}>
+                  MCQ Bunker
+                </span>
+                <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.75)', fontWeight: 500 }}>
+                  Avodha Education for a Job
+                </span>
+              </div>
             </div>
 
             <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>
@@ -169,13 +181,27 @@ const Login = () => {
         >
           {/* Mobile logo */}
           <div style={{
-            display: 'flex', alignItems: 'center', gap: 10,
-            marginBottom: 36,
+            display: 'flex', alignItems: 'center', gap: 12,
+            marginBottom: 32,
           }} className="login-mobile-logo">
-            <div className="logo-icon" style={{ width: 36, height: 36, borderRadius: 10 }}>
-              <BookOpen size={18} color="#fff" />
+            <div style={{
+              width: 44, height: 44, borderRadius: 12,
+              background: '#fff',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              padding: 4,
+              boxShadow: '0 2px 10px rgba(0,0,0,0.15)',
+              flexShrink: 0,
+            }}>
+              <img
+                src={avodhaLogo}
+                alt="Avodha"
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              />
             </div>
-            <span style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--text-primary)' }}>MCQ Bunker</span>
+            <div>
+              <span style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--text-primary)', display: 'block', lineHeight: 1.2 }}>MCQ Bunker</span>
+              <span style={{ fontSize: '0.68rem', color: 'var(--brand-400)', fontWeight: 500 }}>Avodha Student Portal</span>
+            </div>
           </div>
 
           <div style={{ marginBottom: 32 }}>
@@ -265,9 +291,9 @@ const Login = () => {
                 <input type="checkbox" id="remember-me" style={{ accentColor: 'var(--brand-500)' }} />
                 <span style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>Remember me</span>
               </label>
-              <a href="#" style={{ fontSize: '0.82rem', color: 'var(--brand-500)', fontWeight: 600, textDecoration: 'none' }}>
-                Forgot password?
-              </a>
+              <span style={{ fontSize: '0.82rem', color: 'var(--brand-500)', fontWeight: 600, textDecoration: 'none' }}>
+                Contact admin for login credentials
+              </span>
             </div>
 
             {/* Submit */}
@@ -292,6 +318,19 @@ const Login = () => {
               )}
             </motion.button>
           </form>
+
+          {/* Team credit */}
+          <p style={{
+            marginTop: 28,
+            textAlign: 'center',
+            fontSize: '0.72rem',
+            color: 'var(--text-muted)',
+            letterSpacing: '0.02em',
+            lineHeight: 1.6,
+          }}>
+            Designed &amp; Developed by{' '}
+            <span style={{ color: 'var(--brand-400)', fontWeight: 700 }}>Team AOC Thrissur</span>
+          </p>
         </motion.div>
       </div>
 

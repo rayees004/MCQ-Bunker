@@ -3,9 +3,10 @@ import { Outlet, NavLink, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
 import {
-  BookOpen, History, LogOut, LayoutDashboard,
-  Menu, X, Sun, Moon, ChevronRight
+  History, LogOut, LayoutDashboard,
+  X, ChevronRight
 } from 'lucide-react';
+import avodhaLogo from '../../assets/avodha-logo.jpg';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
@@ -37,22 +38,34 @@ const SidebarContent = ({ user, logout, onNavClick }) => {
   return (
     <>
       {/* Brand */}
-      <div style={{ padding: '24px 20px 16px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div className="logo-icon">
-            <BookOpen size={20} color="#fff" />
+      <div style={{ padding: '20px 16px 14px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          {/* Avodha Logo */}
+          <div style={{
+            width: 48, height: 48, borderRadius: 12,
+            background: '#fff',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            padding: 4,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.18)',
+            flexShrink: 0,
+          }}>
+            <img
+              src={avodhaLogo}
+              alt="Avodha Logo"
+              style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: 8 }}
+            />
           </div>
           <div>
             <h1 style={{
-              fontSize: '1.05rem',
+              fontSize: '1rem',
               fontWeight: 800,
               color: 'var(--text-primary)',
               letterSpacing: '-0.02em',
-              lineHeight: 1.1,
+              lineHeight: 1.15,
               margin: 0,
             }}>MCQ Bunker</h1>
-            <p style={{ fontSize: '0.7rem', color: 'var(--brand-400)', margin: 0, fontWeight: 500 }}>
-              Student Portal
+            <p style={{ fontSize: '0.68rem', color: 'var(--brand-400)', margin: 0, fontWeight: 500 }}>
+              Avodha Student Portal
             </p>
           </div>
         </div>
@@ -255,9 +268,20 @@ const StudentLayout = () => {
             </button>
 
             {/* Logo — mobile only */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }} className="md-hidden">
-              <div className="logo-icon" style={{ width: 30, height: 30, borderRadius: 8 }}>
-                <BookOpen size={16} color="#fff" />
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }} className="md-hidden">
+              <div style={{
+                width: 32, height: 32, borderRadius: 8,
+                background: '#fff',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                padding: 3,
+                boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+                flexShrink: 0,
+              }}>
+                <img
+                  src={avodhaLogo}
+                  alt="Avodha"
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                />
               </div>
               <span style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--text-primary)' }}>
                 MCQ Bunker
