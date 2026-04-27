@@ -54,9 +54,7 @@ class StudentChapterQuestionsView(APIView):
     def get(self, request, pk):
         chapter = get_object_or_404(Chapter, pk=pk)
         questions = (
-            Question.objects.filter(chapter=chapter)
-            .prefetch_related("choices")
-            .order_by("?")[: chapter.total_questions]  # random selection
+            Question.objects.filter(chapter=chapter).order_by("?")[0: chapter.total_questions]  # random selection
         )
         serializer = QuestionStudentSerializer(questions, many=True)
         return Response(
