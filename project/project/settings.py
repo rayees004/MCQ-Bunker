@@ -6,7 +6,11 @@ import os
 from pathlib import Path
 from datetime import timedelta
 import dj_database_url
-from decouple import config
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -78,7 +82,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default= config('DATABASE_URL')
+        default= os.environ.get('DATABASE_URL')
     )
 }
 
