@@ -319,7 +319,9 @@ const RetakeModal = ({ chapter, onClose, onConfirm }) => (
               }}>
                 <AlertCircle size={17} style={{ color: '#f59e0b', flexShrink: 0, marginTop: 2 }} />
                 <p style={{ color: '#d97706', fontSize: '0.82rem', margin: 0, lineHeight: 1.6 }}>
-                  Once you submit, your request will be reviewed by the <strong>admin</strong>. The exam will unlock after approval.
+                  
+                  Admin will review and unlock the exam after approval. 
+                  Need updates? Just ping the admin
                 </p>
               </div>
 
