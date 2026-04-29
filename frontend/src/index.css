@@ -506,3 +506,9 @@ body {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+
+/* ─── Pulse keyframe (used by exam navigator skipped buttons) ──── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
